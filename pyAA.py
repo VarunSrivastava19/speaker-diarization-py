@@ -18,7 +18,7 @@ for i in range(0,length_series,int(sample_rate/5.0)):
      z = li.zero_crossings(frame_self)
      arr = np.nonzero(z)
      zero_crossings.append(len(arr[0]))
-     e = li.feature.rmse(frame_self)
+     e = li.feature.rms(frame_self)
      energy.append(np.mean(e))
      ent = 0.0
      m = np.mean(e)
