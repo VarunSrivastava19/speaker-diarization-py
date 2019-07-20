@@ -2,8 +2,19 @@ import librosa as li
 import numpy as np 
 from sklearn.cluster import AffinityPropagation, KMeans
 from scipy import stats
+import matplotlib.pyplot as plt
+import scipy.io.wavfile
 
+# audio file
 file_name = "sample.wav"
+
+# display waveform for audio signal
+rate, data = scipy.io.wavfile.read(file_name)
+print(rate)
+print(data)
+plt.plot(data)
+plt.show()
+
 audio_time_series, sample_rate = li.load(file_name)
 length_series = len(audio_time_series)
 print(length_series)
